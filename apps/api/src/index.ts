@@ -2,7 +2,7 @@ import { setupHttpServer } from "./api";
 import { setupWebSocket } from "./websocket";
 
 // 取得環境變數
-const PORT = process.env.BACKEND_PORT ? Number(process.env.BACKEND_PORT) : 3000;
+const PORT = process.env.PORT ? Number(process.env.PORT) : 3000;
 
 // 建立 HTTP Server
 const httpServer = setupHttpServer(PORT);
