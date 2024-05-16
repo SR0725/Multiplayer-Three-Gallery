@@ -1,14 +1,13 @@
 /**
- * Player Service
+ * any Service
  */
-import { Player } from "common-type";
 
-const players = new Map<string, Player>();
+const players = new Map<string, any>();
 
 /**
  * 新增玩家
  */
-const addPlayer = (newPlayer: Player) => {
+const addPlayer = (newPlayer: any) => {
   players.set(newPlayer.id, newPlayer);
 };
 
@@ -22,7 +21,7 @@ const removePlayer = (playerId: string) => {
 /**
  * 更新玩家資料
  */
-const updatePlayer = (data: Player) => {
+const updatePlayer = (data: any) => {
   const player = players.get(data.id);
   if (!player) return;
   player.position = data.position;

@@ -7,21 +7,20 @@
  *
  */
 
-import { Player, playerSchema } from "common-type";
 import { Server, Socket } from "socket.io";
 import { playerService } from "./index";
 
-const handlePlayerJoin = (socket: Socket) => (data: Player) => {
-  if (playerSchema.safeParse(data).success === false) {
-    socket.emit("error", `Invalid data format for player:join`);
-  }
+const handlePlayerJoin = (socket: Socket) => (data: any) => {
+  // if (playerSchema.safeParse(data).success === false) {
+  //   socket.emit("error", `Invalid data format for player:join`);
+  // }
   playerService.addPlayer(data);
 };
 
-const handlePlayerUpdate = (socket: Socket) => (data: Player) => {
-  if (playerSchema.safeParse(data).success === false) {
-    socket.emit("error", `Invalid data format for player:update`);
-  }
+const handlePlayerUpdate = (socket: Socket) => (data: any) => {
+  // if (playerSchema.safeParse(data).success === false) {
+  //   socket.emit("error", `Invalid data format for player:update`);
+  // }
   playerService.updatePlayer(data);
 };
 
