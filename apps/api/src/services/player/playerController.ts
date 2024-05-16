@@ -8,7 +8,7 @@
  */
 
 import { Player, playerSchema } from "common-type";
-import { Socket } from "socket.io";
+import { Server, Socket } from "socket.io";
 import { playerService } from "./index";
 
 const handlePlayerJoin = (socket: Socket) => (data: Player) => {
@@ -29,8 +29,13 @@ const handlePlayerLeave = (socket: Socket) => () => {
   playerService.removePlayer(socket.id);
 };
 
+const handleEmitPlayerUpdate = (io: Server) => () => {
+  io.emit("player:update", playerService.getAllPlayersAsList());
+};
+
 export const playerController = {
   handlePlayerJoin,
   handlePlayerUpdate,
   handlePlayerLeave,
+  handleEmitPlayerUpdate,
 };
