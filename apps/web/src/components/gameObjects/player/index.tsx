@@ -106,7 +106,7 @@ const Player: FC<JSX.IntrinsicElements['group']> = (props) => {
       dailySessionId: null,
       useModelType: null,
     };
-    socket.emit('player:updateState', player);
+    socket.emit('player:update', player);
   });
 
   return (

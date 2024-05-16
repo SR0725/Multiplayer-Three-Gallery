@@ -13,4 +13,10 @@ export const setupSocketHandler = (io: Server) => {
       console.log("A user disconnected.");
     });
   });
+
+  function handleUpdateSocket() {
+    playerController.handleEmitPlayerUpdate(io)();
+  }
+
+  setInterval(handleUpdateSocket, 30);
 };
