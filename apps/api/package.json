@@ -24,7 +24,8 @@
     "common-type": "*",
     "morgan": "^1.10.0",
     "socket.io": "^4.6.1",
-    "zod": "^3.21.4"
+    "zod": "^3.21.4",
+    "openai": "^4.67.0"
   },
   "devDependencies": {
     "@types/body-parser": "^1.19.0",

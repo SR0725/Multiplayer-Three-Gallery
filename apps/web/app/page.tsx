@@ -14,6 +14,9 @@ import { ArtworkWithGuide111C52018 } from '@/components/gameObjects/artworkWithG
 import { ArtworkWithGuide111C52029 } from '@/components/gameObjects/artworkWithGuide111C52029';
 import { ArtworkWithGuide111C52014 } from '@/components/gameObjects/artworkWithGuide111C52014';
 import { ArtworkWithGuide111C52030 } from '@/components/gameObjects/artworkWithGuide111C52030';
+import VoiceSystem from '@/components/voice/voiceSystem';
+import { UI } from '@/components/dom/UI';
+import GptPanel from '@/components/gpt/gptPanel';
 
 const Player = dynamic(() => import('@/components/gameObjects/player'), {
   ssr: false,
@@ -60,6 +63,10 @@ export default function Page() {
 
   return (
     <Suspense fallback={null}>
+      <UI>
+        <VoiceSystem />
+        <GptPanel />
+      </UI>
       {/* <Perf /> */}
       <Environment files='/sky.hdr' background={true} />
       <OrbitControls position={[100, 0, 100]} />
