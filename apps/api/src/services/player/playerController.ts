@@ -10,6 +10,7 @@
 import { Server, Socket } from "socket.io";
 import { playerService } from "./index";
 
+// eslint-disable-next-line no-unused-vars
 const handlePlayerJoin = (socket: Socket) => (data: any) => {
   // if (playerSchema.safeParse(data).success === false) {
   //   socket.emit("error", `Invalid data format for player:join`);
@@ -17,6 +18,7 @@ const handlePlayerJoin = (socket: Socket) => (data: any) => {
   playerService.addPlayer(data);
 };
 
+// eslint-disable-next-line no-unused-vars
 const handlePlayerUpdate = (socket: Socket) => (data: any) => {
   // if (playerSchema.safeParse(data).success === false) {
   //   socket.emit("error", `Invalid data format for player:update`);
