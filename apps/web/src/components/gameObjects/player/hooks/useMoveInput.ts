@@ -46,6 +46,49 @@ export const useMoveInput = ({
     };
   }, []);
 
+  // for mobile move
+  useEffect(() => {
+    const handleTouchGoForwardStart = () => {
+      setGoForward(1);
+    };
+    const handleTouchGoForwardEnd = () => {
+      setGoForward(0);
+    };
+    const handleTouchGoBackwardStart = () => {
+      setGoForward(-1);
+    };
+    const handleTouchGoBackwardEnd = () => {
+      setGoForward(0);
+    };
+    document
+      .getElementById('forward')
+      ?.addEventListener('touchstart', handleTouchGoForwardStart);
+    document
+      .getElementById('forward')
+      ?.addEventListener('touchend', handleTouchGoForwardEnd);
+    document
+      .getElementById('backward')
+      ?.addEventListener('touchstart', handleTouchGoBackwardStart);
+    document
+      .getElementById('backward')
+      ?.addEventListener('touchend', handleTouchGoBackwardEnd);
+
+    return () => {
+      document
+        .getElementById('forward')
+        ?.removeEventListener('touchstart', handleTouchGoForwardStart);
+      document
+        .getElementById('forward')
+        ?.removeEventListener('touchend', handleTouchGoForwardEnd);
+      document
+        .getElementById('backward')
+        ?.removeEventListener('touchstart', handleTouchGoBackwardStart);
+      document
+        .getElementById('backward')
+        ?.removeEventListener('touchend', handleTouchGoBackwardEnd);
+    };
+  }, []);
+
   useEffect(() => {
     const handleWheel = (event: WheelEvent) => {
       setCameraDistance((prev) => {

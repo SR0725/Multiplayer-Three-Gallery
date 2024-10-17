@@ -17,6 +17,7 @@ import { ArtworkWithGuide111C52030 } from '@/components/gameObjects/artworkWithG
 import VoiceSystem from '@/components/voice/voiceSystem';
 import { UI } from '@/components/dom/UI';
 import GptPanel from '@/components/gpt/gptPanel';
+import MobileControl from '@/components/mobile/MobileControl';
 
 const Player = dynamic(() => import('@/components/gameObjects/player'), {
   ssr: false,
@@ -66,6 +67,7 @@ export default function Page() {
       <UI>
         <VoiceSystem />
         <GptPanel />
+        <MobileControl />
       </UI>
       {/* <Perf /> */}
       <Environment files='/sky.hdr' background={true} />
