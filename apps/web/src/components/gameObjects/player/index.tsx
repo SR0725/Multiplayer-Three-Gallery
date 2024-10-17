@@ -87,7 +87,10 @@ const Player: FC<JSX.IntrinsicElements['group']> = (props) => {
     const forward = new Vector3(0, 0, -1);
     const quaternion = new Quaternion();
 
-    api.position.subscribe((v) => (currenPostion.current = v));
+    api.position.subscribe((v) => {
+      currenPostion.current = v;
+      console.log(currenPostion.current);
+    });
 
     camera?.getWorldQuaternion(quaternion);
     forward.applyQuaternion(quaternion);

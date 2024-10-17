@@ -45,6 +45,12 @@ const artworks: ArtworkData[] = [
     scale: [0.5, 0.5, 1],
     url: '/artworks/四季運作_夏.jpg',
   },
+  {
+    position: [-10.5, 1.475, 1.144],
+    rotation: [0, 1.575, 0],
+    scale: [1, 1, 1],
+    url: '/artworks/star.jpg',
+  },
 ];
 
 export const Artworks = () => {
