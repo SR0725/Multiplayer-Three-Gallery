@@ -46,17 +46,17 @@ function GptPanel() {
         </button>
       )}
       {showPanel && (
-        <div className=' flex w-96 flex-col gap-2 rounded-lg bg-white p-4'>
+        <div className=' z-20 flex w-96 flex-col gap-2 rounded-lg bg-white p-4'>
           <button
             className='text-right text-sm text-gray-500'
             onClick={() => setShowPanel(false)}
           >
             關閉
           </button>
-          <div className='flex flex-col gap-2 max-h-96 overflow-y-auto'>
+          <div className='flex max-h-96 flex-col gap-2 overflow-y-auto'>
             <div className='flex flex-col gap-2 border-b'>
               <div className='text-sm text-gray-500'>AI 導覽員</div>
-              <div className='text-sm pb-2'>
+              <div className='pb-2 text-sm'>
                 嗨，我是 AI
                 美術館導覽員，歡迎詢問我任何關於美術館的問題。不過目前的我還在測試，可能會有回答上的錯誤
               </div>
@@ -66,7 +66,7 @@ function GptPanel() {
                 <div className='text-sm text-gray-500'>
                   {message.role === 'assistant' ? 'AI 導覽員' : '你'}
                 </div>
-                <div className='text-sm pb-2'>{message.content}</div>
+                <div className='pb-2 text-sm'>{message.content}</div>
               </div>
             ))}
           </div>
